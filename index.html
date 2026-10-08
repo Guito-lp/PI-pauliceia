@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0d0d0d" />
+    <meta name="description" content="Um guia para descobrir os lugares, histórias e experiências que fazem São Paulo ser desvairada." />
+    <title>Pauliceia SP — Guia de São Paulo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#inicio" aria-label="Pauliceia SP, início">
+          <span>PAUL<span class="brand-yellow">I</span>CE<span class="brand-pink">I</span>A</span>
+          <span class="brand-tag">SP</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menu">
+          <span></span><span></span>
+        </button>
+        <nav class="primary-nav" id="primary-nav" aria-label="Navegação principal">
+          <a class="nav-link is-current" href="#inicio">Início</a>
+          <a class="nav-link" href="#explorar">Explorar</a>
+          <a class="nav-link" href="#sobre">Sobre</a>
+        </nav>
+        <div class="header-actions">
+          <button class="accessibility-toggle" type="button" aria-pressed="false">
+            <img src="assets/accessibility.svg" alt="" />
+            <span>Acessibilidade</span>
+          </button>
+          <button class="theme-toggle" type="button" aria-label="Alternar tema" aria-pressed="false">☂</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <img class="hero-photo" src="assets/hero.png" alt="Ponte estaiada de São Paulo vista de baixo" />
+        <div class="hero-texture" aria-hidden="true"></div>
+        <div class="hero-scrim" aria-hidden="true"></div>
+        <div class="hero-shape shape-yellow" aria-hidden="true"></div>
+        <div class="hero-shape shape-pink" aria-hidden="true"></div>
+        <div class="hero-shape shape-green" aria-hidden="true"></div>
+        <div class="hero-shape shape-blue" aria-hidden="true"></div>
+        <div class="hero-shape shape-orange" aria-hidden="true"></div>
+        <img class="hero-spark" src="assets/hero-spark.svg" alt="" />
+        <img class="hero-mark" src="assets/hero-mark.svg" alt="" />
+
+        <div class="hero-content page-width">
+          <p class="eyebrow hero-eyebrow"><span></span> Guia de São Paulo</p>
+          <h1 id="hero-title" aria-label="Pauliceia"><span>P</span><span>A</span><span>U</span><span>L</span><span class="yellow-letter">I</span><span>C</span><span>E</span><span class="pink-letter">I</span><span>A</span></h1>
+          <p class="hero-index">[SP]</p>
+          <div class="hero-copy">
+            <h2>São Paulo é muito mais do que você imagina.</h2>
+            <p>Um guia para descobrir os lugares, histórias e experiências que fazem a cidade ser desvairada.</p>
+            <a class="button button-blue" href="#explorar">Explorar a Pauliceia <span aria-hidden="true">→</span></a>
+            <div class="scroll-note">
+              <span>Role<br />pra baixo<br /><b aria-hidden="true">↓</b></span>
+              <img src="assets/scroll-mark.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="explore-section paper-section" id="explorar" aria-labelledby="explore-title">
+        <div class="page-width section-pad">
+          <div class="section-heading explore-heading">
+            <div>
+              <p class="eyebrow">Descubra</p>
+              <h2 class="display-heading" id="explore-title">O que você<br />quer explorar?</h2>
+            </div>
+            <div class="heading-aside">
+              <p>Rolês de todo tipo espalhados pela cidade e região. Filtra pelo que te anima.</p>
+              <a class="text-link" href="#lugares">Ver todos os lugares <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+
+          <div class="category-grid">
+            <a class="category-card category-culture" href="#lugares">
+              <img src="assets/category-culture.png" alt="Mural e arte urbana em São Paulo" />
+              <span class="category-content"><span class="category-top"><span class="category-number">01</span><span class="category-arrow" aria-hidden="true">→</span></span><span class="category-name">Arte &amp; Cultura</span><span class="category-description">Museus, galerias, teatros e grafite</span></span>
+            </a>
+            <a class="category-card category-nature" href="#lugares">
+              <img src="assets/category-nature.png" alt="Trilha cercada por verde" />
+              <span class="category-content"><span class="category-top"><span class="category-number">02</span><span class="category-arrow" aria-hidden="true">→</span></span><span class="category-name">Natureza</span><span class="category-description">Trilhas, represas e mata atlântica</span></span>
+            </a>
+            <a class="category-card category-food" href="#lugares">
+              <img src="assets/category-food.png" alt="Banca de comida em mercado" />
+              <span class="category-content"><span class="category-top"><span class="category-number">03</span><span class="category-arrow" aria-hidden="true">→</span></span><span class="category-name">Gastronomia</span><span class="category-description">Feiras, restaurantes e sabores únicos</span></span>
+            </a>
+            <a class="category-card category-events" href="#lugares">
+              <img src="assets/category-events.png" alt="Multidão em evento cultural" />
+              <span class="category-content"><span class="category-top"><span class="category-number">04</span><span class="category-arrow" aria-hidden="true">→</span></span><span class="category-name">Eventos</span><span class="category-description">Shows, festivais e programação cultural</span></span>
+            </a>
+            <a class="category-card category-daytrip" href="#lugares">
+              <img src="assets/category-daytrip.png" alt="Caminho com neblina na serra" />
+              <span class="category-content"><span class="category-top"><span class="category-number">05</span><span class="category-arrow" aria-hidden="true">→</span></span><span class="category-name">Bate-volta</span><span class="category-description">Escapadas de fim de semana perto de SP</span></span>
+            </a>
+            <a class="category-card category-history" href="#lugares">
+              <img src="assets/category-history.png" alt="Edifício histórico paulistano" />
+              <span class="category-content"><span class="category-top"><span class="category-number">06</span><span class="category-arrow" aria-hidden="true">→</span></span><span class="category-name">História</span><span class="category-description">Patrimônios, memórias e arquitetura</span></span>
+            </a>
+            <a class="category-card category-photo" href="#lugares">
+              <img src="assets/category-photography.png" alt="Paisagem urbana ao entardecer" />
+              <span class="category-content"><span class="category-top"><span class="category-number">07</span><span class="category-arrow" aria-hidden="true">→</span></span><span class="category-name">Fotografia</span><span class="category-description">Cenários, luz e locações para fotos</span></span>
+            </a>
+            <a class="category-card category-hidden" href="#lugares">
+              <img src="assets/category-hidden.png" alt="Vista de um lugar pouco conhecido" />
+              <span class="category-content"><span class="category-top"><span class="category-number">08</span><span class="category-arrow" aria-hidden="true">→</span></span><span class="category-name">Lugares escondidos</span><span class="category-description">Cantos pouco conhecidos da cidade</span></span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="featured-section dark-section" id="lugares" aria-labelledby="featured-title">
+        <div class="page-width section-pad">
+          <div class="section-heading featured-heading">
+            <h2 id="featured-title">Lugares em destaque</h2>
+            <a class="text-link text-link-muted" href="#mapa">Ver todos os lugares <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="featured-grid">
+            <a class="featured-main" href="https://maps.google.com/?q=Paranapiacaba+SP" target="_blank" rel="noreferrer">
+              <img src="assets/destination-paranapiacaba.png" alt="Caminho envolto em névoa na Vila de Paranapiacaba" />
+              <span class="featured-main-copy"><strong>Estação da Luz → Paranapiacaba</strong><span>Uma vila inglesa escondida entre a serra e a neblina.</span><i aria-hidden="true">→</i></span>
+            </a>
+            <div class="featured-list">
+              <a class="place-row" href="https://maps.google.com/?q=Parelheiros+SP" target="_blank" rel="noreferrer">
+                <img src="assets/destination-parelheiros.png" alt="Plantação de chá em Parelheiros" />
+                <span><strong>Colônia — Parelheiros</strong><span>Uma colônia japonesa no extremo sul de SP com ryokans, feiras de orgânicos e estradas de terra entre hortas.</span></span>
+                <i aria-hidden="true">→</i>
+              </a>
+              <a class="place-row" href="https://maps.google.com/?q=SESC+Interlagos" target="_blank" rel="noreferrer">
+                <img src="assets/destination-sesc.png" alt="Interior do SESC Interlagos" />
+                <span><strong>SESC Interlagos</strong><span>Complexo cultural premiado às margens da represa Guarapiranga — shows, exposições e vista épica.</span></span>
+                <i aria-hidden="true">→</i>
+              </a>
+              <a class="place-row" href="https://maps.google.com/?q=Embu+das+Artes" target="_blank" rel="noreferrer">
+                <img src="assets/destination-embu.png" alt="Mural colorido em Embu das Artes" />
+                <span><strong>Embu das Artes</strong><span>Cidade colonial a 28km de SP com a maior feira de artesanato do país. O fim de semana perfeito.</span></span>
+                <i aria-hidden="true">→</i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="social-section paper-section" aria-labelledby="social-title">
+        <div class="page-width section-pad">
+          <p class="eyebrow social-eyebrow">✦ Redes sociais</p>
+          <h2 class="social-title" id="social-title">Vi no TikTok.<br />Fui conferir.</h2>
+          <div class="social-grid">
+            <a class="social-card" href="https://www.tiktok.com/@tripemsp" target="_blank" rel="noreferrer" aria-label="Ver publicação de @tripemsp no TikTok">
+              <img src="assets/social-tripemsp.png" alt="Caminho enevoado em Paranapiacaba" />
+              <span class="play-button" aria-hidden="true">▶</span>
+              <span class="social-caption"><strong>@tripemsp</strong><span>Vila vitoriana a 60km de SP com névoa todo dia 🌫️</span><small>◉ 1.4M views</small></span>
+            </a>
+            <a class="social-card" href="https://www.tiktok.com/@mochileirasp" target="_blank" rel="noreferrer" aria-label="Ver publicação de @mochileirasp no TikTok">
+              <img src="assets/social-mochileirasp.png" alt="Plantação verde nas colinas" />
+              <span class="play-button" aria-hidden="true">▶</span>
+              <span class="social-caption"><strong>@mochileirasp</strong><span>Japão em São Paulo? Isso não deveria existir 🇯🇵</span><small>◉ 987K views</small></span>
+            </a>
+            <a class="social-card" href="https://www.tiktok.com/@ccsaopaulo" target="_blank" rel="noreferrer" aria-label="Ver publicação de @ccsaopaulo no TikTok">
+              <img src="assets/social-ccsaopaulo.png" alt="Espaço cultural contemporâneo" />
+              <span class="play-button" aria-hidden="true">▶</span>
+              <span class="social-caption"><strong>@ccsaopaulo</strong><span>47 mil m² de cultura. De graça. No centro de SP. 🤯</span><small>◉ 2.1M views</small></span>
+            </a>
+            <a class="social-card" href="https://www.tiktok.com/@viajemsp" target="_blank" rel="noreferrer" aria-label="Ver publicação de @viajemsp no TikTok">
+              <img src="assets/social-viajemsp.png" alt="Pessoa diante de um mural em Embu das Artes" />
+              <span class="play-button" aria-hidden="true">▶</span>
+              <span class="social-caption"><strong>@viajemsp</strong><span>Embu das Artes num domingo de manhã é outro nível 🎨</span><small>◉ 654K views</small></span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="map-cta" id="mapa" aria-labelledby="map-title">
+        <div class="page-width map-inner">
+          <div>
+            <p class="eyebrow">Mapa interativo</p>
+            <h2 id="map-title">Encontra tudo no mapa.<br />São Paulo te espera.</h2>
+          </div>
+          <a class="button button-dark" href="https://maps.google.com/?q=São+Paulo+SP" target="_blank" rel="noreferrer">Ver no mapa <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="sobre">
+      <div class="page-width footer-inner">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <a class="footer-brand" href="#inicio">PAULICEIA <span>SP</span></a>
+            <p>Um guia para descobrir os lugares, histórias e experiências que fazem São Paulo ser desvairada.</p>
+            <em>Inspirado em Pauliceia Desvairada de Mário de Andrade.</em>
+          </div>
+          <div class="footer-column">
+            <h2>Navegar</h2>
+            <a href="#explorar">Explorar</a><a href="#lugares">Lugares</a><a href="#sobre">Sobre</a>
+          </div>
+          <div class="footer-column">
+            <h2>Descobrir</h2>
+            <a href="#explorar">Arte &amp; Cultura</a><a href="#explorar">Natureza</a><a href="#explorar">Gastronomia</a><a href="#explorar">Bate-volta</a><a href="#explorar">Rolê grátis</a>
+          </div>
+          <div class="footer-column footer-socials">
+            <h2>Redes</h2>
+            <div class="social-links"><a href="https://www.instagram.com/" aria-label="Instagram">IG</a><a href="https://www.tiktok.com/" aria-label="TikTok">TK</a><a href="https://www.youtube.com/" aria-label="YouTube">YT</a><a href="https://open.spotify.com/" aria-label="Spotify">SP</a></div>
+            <h2 class="credits-heading">Feito por</h2>
+            <p>Guilherme<br />Luara Castro<br />Luana Baldonado<br />Pedro Gabriel<br />Vinicius</p>
+          </div>
+        </div>
+        <div class="footer-bottom"><span>© 2026 Pauliceia — São Paulo, Brasil</span><strong>São Paulo, sempre. <b aria-hidden="true">♥</b></strong></div>
+      </div>
+    </footer>
+  </body>
+</html>
