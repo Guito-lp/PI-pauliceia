@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Icon" opacity="0.7">
+<path id="Vector" d="M40 10V70" stroke-width="1.5" stroke-linecap="round" stroke="white"/>
+<path id="Vector_2" d="M10 40H70" stroke-width="1.5" stroke-linecap="round" stroke="white"/>
+<path id="Vector_3" d="M18 18L62 62" stroke-width="1.2" stroke-linecap="round" stroke="white"/>
+<path id="Vector_4" d="M62 18L18 62" stroke-width="1.2" stroke-linecap="round" stroke="white"/>
+<path id="Vector_5" d="M40 12.5C41.3807 12.5 42.5 11.3807 42.5 10C42.5 8.61929 41.3807 7.5 40 7.5C38.6193 7.5 37.5 8.61929 37.5 10C37.5 11.3807 38.6193 12.5 40 12.5Z" fill="white"/>
+<path id="Vector_6" d="M40 72.5C41.3807 72.5 42.5 71.3807 42.5 70C42.5 68.6193 41.3807 67.5 40 67.5C38.6193 67.5 37.5 68.6193 37.5 70C37.5 71.3807 38.6193 72.5 40 72.5Z" fill="white"/>
+<path id="Vector_7" d="M10 42.5C11.3807 42.5 12.5 41.3807 12.5 40C12.5 38.6193 11.3807 37.5 10 37.5C8.61929 37.5 7.5 38.6193 7.5 40C7.5 41.3807 8.61929 42.5 10 42.5Z" fill="white"/>
+<path id="Vector_8" d="M70 42.5C71.3807 42.5 72.5 41.3807 72.5 40C72.5 38.6193 71.3807 37.5 70 37.5C68.6193 37.5 67.5 38.6193 67.5 40C67.5 41.3807 68.6193 42.5 70 42.5Z" fill="white"/>
+</g>
+</svg>
