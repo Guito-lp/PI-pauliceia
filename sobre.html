@@ -4,101 +4,279 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0d0d0d" />
+    <link rel="icon" href="assets/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" sizes="any" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
     <meta name="description" content="Conheça a Pauliceia, um guia feito por paulistanos para descobrir São Paulo além do óbvio." />
-    <title>Sobre a Pauliceia — Pauliceia SP</title>
+    <title>Sobre | Pauliceia SP</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
+
   <body class="about-page">
     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- CABEÇALHO -->
     <header class="site-header">
       <div class="header-inner">
-        <a class="brand" href="index.html" aria-label="Pauliceia SP, início"><span>PAUL<span class="brand-yellow">I</span>CE<span class="brand-pink">I</span>A</span><span class="brand-tag">SP</span></a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menu"><span></span><span></span></button>
+        <a class="brand" href="index.html" aria-label="Pauliceia SP, início">
+          <span>PAUL<span class="brand-yellow">I</span>CE<span class="brand-pink">I</span>A</span>
+          <span class="brand-tag">SP</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menu">
+          <span></span><span></span>
+        </button>
+
         <nav class="primary-nav" id="primary-nav" aria-label="Navegação principal">
-          <a class="nav-link" href="index.html">Início</a><a class="nav-link" href="explorar.html">Explorar</a><a class="nav-link is-current" href="sobre.html" aria-current="page">Sobre</a>
+          <a class="nav-link" href="index.html">Início</a>
+          <a class="nav-link" href="explorar.html">Explorar</a>
+          <a class="nav-link is-current" href="sobre.html" aria-current="page">Sobre</a>
         </nav>
-        <div class="header-actions"><button class="accessibility-toggle" type="button" aria-label="Ativar alto contraste" aria-pressed="false"><img src="assets/icon-contrast.svg" alt="" /></button><button class="theme-toggle" type="button" aria-label="Ativar tema escuro" aria-pressed="false"><img src="assets/icon-dark-mode.svg" alt="" /></button></div>
+
+        <div class="header-actions">
+          <button class="accessibility-toggle" type="button" aria-label="Ativar alto contraste" aria-pressed="false">
+            <img src="assets/icon-contrast.svg" alt="" />
+          </button>
+          <button class="theme-toggle" type="button" aria-label="Ativar tema escuro" aria-pressed="false">
+            <img src="assets/icon-dark-mode.svg" alt="" />
+          </button>
+        </div>
       </div>
     </header>
 
     <main id="conteudo">
+      <!-- HERO -->
       <section class="about-hero">
         <div class="page-width about-hero-inner">
           <p class="eyebrow">✦ Sobre o projeto</p>
           <h1>Somos a<br /><span>Pauliceia</span></h1>
-          <p>Um guia criado por paulistanos para paulistanos e pra quem quer descobrir o que São Paulo esconde além do óbvio.</p>
+          <p>Um guia criado por paulistanos para paulistanos — e pra quem quer descobrir o que São Paulo esconde além do óbvio.</p>
         </div>
       </section>
 
+      <!-- CONCEITO -->
       <section class="concept-section paper-section">
         <div class="page-width concept-grid">
           <div class="concept-copy">
             <p class="eyebrow">Conceito</p>
             <h2>Desvairada de verdade.</h2>
-            <p>O nome PAULICEIA vem de <em>Pauliceia Desvairada</em>, o livro de Mário de Andrade que inaugurou o Modernismo brasileiro em 1922. Para Mário, São Paulo era uma cidade contraditória, caótica, humana e por isso extraordinária.</p>
+            <p>O nome PAULICEIA vem de <em>Pauliceia Desvairada</em>, o livro de Mário de Andrade que inaugurou o Modernismo brasileiro em 1922. Para Mário, São Paulo era uma cidade contraditória, caótica, humana — e por isso extraordinária.</p>
             <p>Esse espírito que nunca sossega? São Paulo é muito mais do que o centro, a Paulista e o Ibirapuera. É cada bairro, cada pessoa, cada história que ainda está sendo escrita por aqui.</p>
-            <p>A PAULICEIA existe para mostrar esses lugares com respeito, com alegria, e com a linguagem da geração que vai neles.</p>
+            <p>A PAULICEIA existe para mostrar esses lugares — com respeito, com alegria, e com a linguagem da geração que vai neles.</p>
           </div>
-          <img class="concept-image" src="assets/about-skyline.png" alt="Arquitetura e skyline de São Paulo" />
+          <img class="concept-image" src="assets/about-skyline.png" alt="Arquitetura e skyline de São Paulo" loading="lazy" />
         </div>
       </section>
 
+      <!-- MANIFESTO -->
       <section class="about-quote">
         <div class="page-width">
-          <blockquote>“São Paulo acaba aqui? Nem perto. A cidade tem muito mais do que você imagina só precisa de alguém para te mostrar onde olhar.”</blockquote>
+          <blockquote>“São Paulo acaba aqui? Nem perto. A cidade tem muito mais do que você imagina — só precisa de alguém para te mostrar onde olhar.”</blockquote>
           <p>— Equipe Pauliceia</p>
         </div>
       </section>
 
+      <!-- COMO FUNCIONA -->
       <section class="about-method paper-section">
         <div class="page-width">
           <p class="eyebrow">Feito pra você</p>
           <h2>Descobrir → Escolher → Conhecer → Como chegar</h2>
+
           <div class="method-grid">
-            <article class="method-card"><span class="method-icon icon-blue">✦</span><h3>Curadoria real</h3><p>Cada lugar foi visitado, pesquisado e recomendado de verdade. Sem anúncio, sem jabá.</p></article>
-            <article class="method-card"><span class="method-icon icon-pink">▣</span><h3>Filtros divertidos</h3><p>Filtra por tipo de rolê: cultura, natureza, comida, diferente ou aleatório.</p></article>
-            <article class="method-card"><span class="method-icon icon-yellow">▤</span><h3>Informação completa</h3><p>Como chegar, quanto custa, horários, mapas, dicas e o que fazer lá.</p></article>
-            <article class="method-card"><span class="method-icon icon-orange">⌖</span><h3>Mapa interativo</h3><p>Todos os lugares no mapa. Clica no pin e descobre o rolê.</p></article>
-            <article class="method-card"><span class="method-icon icon-green">◉</span><h3>Acessível pra todos</h3><p>Pensado para acessibilidade real: contraste, tamanho de texto e foco.</p></article>
-            <article class="method-card"><span class="method-icon icon-purple">▱</span><h3>100% responsivo</h3><p>Funciona em qualquer tela, celular ou computador. Explore de onde quiser.</p></article>
+            <article class="method-card">
+              <span class="method-icon icon-blue" aria-hidden="true">✦</span>
+              <h3>Curadoria real</h3>
+              <p>Cada lugar foi visitado, pesquisado e recomendado de verdade. Sem anúncio, sem jabá.</p>
+            </article>
+            <article class="method-card">
+              <span class="method-icon icon-pink" aria-hidden="true">▣</span>
+              <h3>Filtros divertidos</h3>
+              <p>Filtra por tipo de rolê: cultura, natureza, comida, diferente ou aleatório.</p>
+            </article>
+            <article class="method-card">
+              <span class="method-icon icon-yellow" aria-hidden="true">▤</span>
+              <h3>Informação completa</h3>
+              <p>Como chegar, quanto custa, horários, mapas, dicas e o que fazer lá.</p>
+            </article>
+            <article class="method-card">
+              <span class="method-icon icon-orange" aria-hidden="true">⌖</span>
+              <h3>Mapa interativo</h3>
+              <p>Todos os lugares no mapa. Clica no pin e descobre o rolê.</p>
+            </article>
+            <article class="method-card">
+              <span class="method-icon icon-green" aria-hidden="true">◉</span>
+              <h3>Acessível pra todos</h3>
+              <p>Pensado para acessibilidade real: contraste, tamanho de texto e foco.</p>
+            </article>
+            <article class="method-card">
+              <span class="method-icon icon-purple" aria-hidden="true">▱</span>
+              <h3>100% responsivo</h3>
+              <p>Funciona em qualquer tela, celular ou computador. Explore de onde quiser.</p>
+            </article>
           </div>
         </div>
       </section>
 
+      <!-- EQUIPE -->
       <section class="team-section dark-section">
         <div class="page-width section-pad">
           <p class="eyebrow">Time por trás</p>
           <h2>Quem faz a Pauliceia</h2>
+
           <div class="team-grid">
-            <article class="team-card"><img src="assets/about-guilherme.png" alt="Guilherme" /><h3>Guilherme</h3><p class="team-role role-blue">Co-fundador</p><p>Programação</p></article>
-            <article class="team-card"><img src="assets/about-luara.png" alt="Luara Castro" /><h3>Luara Castro</h3><p class="team-role role-pink">Idealizadora do projeto</p><p>Pesquisa e conteúdo</p></article>
-            <article class="team-card"><img src="assets/about-luana.png" alt="Luana Baldonado" /><h3>Luana Baldonado</h3><p class="team-role role-orange">Co-criadora</p><p>Design</p></article>
-            <article class="team-card"><img src="assets/about-pedro.png" alt="Pedro Gabriel" /><h3>Pedro Gabriel</h3><p class="team-role role-orange">Co-criador</p><p>Programação</p></article>
-            <article class="team-card"><img src="assets/about-vinicius.png" alt="Vinicius" /><h3>Vinicius</h3><p class="team-role role-green">Co-criador</p><p>Criação</p></article>
+            <article class="team-card">
+              <img src="assets/about-guilherme.jpg" alt="Guilherme" loading="lazy" />
+              <h3>Guilherme Lopes</h3>
+              <p class="team-role role-blue">Criador</p>
+              <p>Programação</p>
+              <button class="interview-btn interview-blue" type="button" data-interview="entrevista-guilherme" aria-haspopup="dialog">Ver entrevista <span aria-hidden="true">+</span></button>
+            </article>
+            <article class="team-card">
+              <img src="assets/about-luara.jpg" alt="Luara Castro" loading="lazy" />
+              <h3>Luara Castro</h3>
+              <p class="team-role role-pink">Criadora e idealizadora do projeto</p>
+              <p>Pesquisa e conteúdo</p>
+              <button class="interview-btn interview-pink" type="button" data-interview="entrevista-luara" aria-haspopup="dialog">Ver entrevista <span aria-hidden="true">+</span></button>
+            </article>
+            <article class="team-card">
+              <img src="assets/about-luana.jpg" alt="Luana Baldonado" loading="lazy" />
+              <h3>Luana Baldonado</h3>
+              <p class="team-role role-yellow">Criadora</p>
+              <p>Programação e fotografia</p>
+              <button class="interview-btn interview-yellow" type="button" data-interview="entrevista-luana" aria-haspopup="dialog">Ver entrevista <span aria-hidden="true">+</span></button>
+            </article>
+            <article class="team-card">
+              <img src="assets/about-pedro.jpg" alt="Pedro Gabriel" loading="lazy" />
+              <h3>Pedro Gabriel</h3>
+              <p class="team-role role-orange">Criador</p>
+              <p>Programação</p>
+              <button class="interview-btn interview-orange" type="button" data-interview="entrevista-pedro" aria-haspopup="dialog">Ver entrevista <span aria-hidden="true">+</span></button>
+            </article>
+            <article class="team-card">
+              <img src="assets/about-vinicius.jpg" alt="Vinicius" loading="lazy" />
+              <h3>Vinicius Souza</h3>
+              <p class="team-role role-green">Criador</p>
+              <p>Design e fotografia</p>
+              <button class="interview-btn interview-green" type="button" data-interview="entrevista-vinicius" aria-haspopup="dialog">Ver entrevista <span aria-hidden="true">+</span></button>
+            </article>
           </div>
         </div>
       </section>
 
+      <!-- ENTREVISTAS (pop-ups) -->
+      <dialog class="interview-dialog interview-blue" id="entrevista-guilherme" aria-labelledby="titulo-guilherme">
+        <div class="interview-head">
+          <p class="eyebrow">Mini entrevista · Sobre as referências e inspirações</p>
+          <button class="interview-close" type="button" data-close aria-label="Fechar entrevista">×</button>
+        </div>
+        <h3 class="interview-name" id="titulo-guilherme">Guilherme <span>Criador</span></h3>
+        <p class="interview-question"><b>Pergunta:</b> O nome do projeto faz referência à obra “Pauliceia Desvairada”, de Mário de Andrade. Como surgiu essa escolha e de qual maneira o Modernismo e a identidade cultural paulistana influenciaram a construção do conceito?</p>
+        <div class="interview-answer">
+          <p>A partir dessa inspiração, o projeto Pauliceia foi pensado como uma plataforma de valorização da cidade de São Paulo, reunindo informações sobre seus lugares, sua história, sua arte, sua cultura e suas diferentes regiões. Assim como Mário de Andrade apresentou uma cidade dinâmica e cheia de contrastes em sua obra, buscamos mostrar uma São Paulo que vai além dos pontos turísticos conhecidos, revelando espaços, histórias e experiências que fazem parte da identidade paulistana.</p>
+        </div>
+      </dialog>
+      <dialog class="interview-dialog interview-pink" id="entrevista-luara" aria-labelledby="titulo-luara">
+        <div class="interview-head">
+          <p class="eyebrow">Mini entrevista · Sobre o nascimento da ideia</p>
+          <button class="interview-close" type="button" data-close aria-label="Fechar entrevista">×</button>
+        </div>
+        <h3 class="interview-name" id="titulo-luara">Luara <span>Idealizadora do projeto</span></h3>
+        <p class="interview-question"><b>Pergunta:</b> O que despertou em vocês a vontade de criar o Pauliceia? Houve alguma experiência pessoal ou percepção sobre São Paulo que fez vocês sentirem a necessidade de apresentar a cidade por uma perspectiva diferente?</p>
+        <div class="interview-answer">
+          <p>A criação do Pauliceia veio de uma inspiração no programa Paulistar, que aborda o turismo, a culinária e diferentes experiências por toda a região de São Paulo. A escolha dos lugares também aconteceu a partir das preferências e experiências pessoais de cada integrante. Um exemplo é a região de Parelheiros, onde nasci e moro atualmente, que abriga a maior reserva de Mata Atlântica da cidade de São Paulo, além de aldeias de povos originários e diversos atrativos naturais, como trilhas, cachoeiras e reservas ambientais.</p>
+          <p>Nosso projeto surgiu com a ideia de mostrar as regiões periféricas para além do que as pessoas já conhecem, apresentando lugares e experiências que fogem do roteiro turístico mais óbvio de São Paulo, explorando desde o centro até as regiões mais afastadas da cidade.</p>
+        </div>
+      </dialog>
+      <dialog class="interview-dialog interview-yellow" id="entrevista-luana" aria-labelledby="titulo-luana">
+        <div class="interview-head">
+          <p class="eyebrow">Mini entrevista · Sobre a valorização da cidade</p>
+          <button class="interview-close" type="button" data-close aria-label="Fechar entrevista">×</button>
+        </div>
+        <h3 class="interview-name" id="titulo-luana">Luana <span>Criadora</span></h3>
+        <p class="interview-question"><b>Pergunta:</b> O projeto apresenta lugares que vão muito além dos pontos turísticos tradicionais, incluindo regiões periféricas e espaços menos conhecidos. Como vocês chegaram a essa proposta de curadoria e quais critérios foram utilizados para escolher o que merece ser apresentado ao público?</p>
+        <div class="interview-answer">
+          <p>Quando se fala em turismo em São Paulo e região, as pessoas sempre pensam nos pontos mais famosos. Entretanto, como o tema do nosso trabalho busca valorizar a herança das regiões periféricas, optamos por dar luz a lugares tão bonitos e interessantes quanto, mas que são pouco visitados ou reconhecidos por turistas e moradores da região. Queríamos focar em mais pontos da região metropolitana e até mesmo do interior, mas, por questões logísticas e de deslocamento, optamos por regiões mais afastadas do centro da cidade de São Paulo, e até mesmo uma famosa feira na região de Barueri.</p>
+        </div>
+      </dialog>
+      <dialog class="interview-dialog interview-orange" id="entrevista-pedro" aria-labelledby="titulo-pedro">
+        <div class="interview-head">
+          <p class="eyebrow">Mini entrevista · Sobre o propósito e o impacto</p>
+          <button class="interview-close" type="button" data-close aria-label="Fechar entrevista">×</button>
+        </div>
+        <h3 class="interview-name" id="titulo-pedro">Pedro <span>Criador</span></h3>
+        <p class="interview-question"><b>Pergunta:</b> Vocês definem o Pauliceia como um guia criado por paulistanos para paulistanos, e também para quem deseja conhecer a cidade além do óbvio. Que mudança de perspectiva vocês gostariam de despertar nas pessoas que utilizarem a plataforma?</p>
+        <div class="interview-answer">
+          <p>Gostaríamos de despertar nas pessoas um novo olhar sobre São Paulo, mostrando que a cidade vai muito além dos pontos turísticos mais conhecidos e dos lugares que fazem parte do cotidiano. Queremos incentivar a curiosidade e fazer com que as pessoas descubram histórias, culturas, espaços e experiências que muitas vezes passam despercebidos.</p>
+          <p>Acreditamos que até mesmo quem mora em São Paulo ainda tem muito a descobrir sobre a própria cidade. Por isso, o Pauliceia busca aproximar as pessoas da riqueza cultural e da diversidade paulistana, incentivando-as a explorar novos lugares, valorizar a identidade local e enxergar a cidade por diferentes perspectivas.</p>
+          <p>Mais do que indicar lugares para visitar, queremos transformar a maneira como as pessoas se relacionam com São Paulo, fazendo com que deixem de apenas passar pela cidade e comecem a vivenciá-la de verdade.</p>
+        </div>
+      </dialog>
+      <dialog class="interview-dialog interview-green" id="entrevista-vinicius" aria-labelledby="titulo-vinicius">
+        <div class="interview-head">
+          <p class="eyebrow">Mini entrevista · Sobre o futuro do projeto</p>
+          <button class="interview-close" type="button" data-close aria-label="Fechar entrevista">×</button>
+        </div>
+        <h3 class="interview-name" id="titulo-vinicius">Vinicius <span>Criador</span></h3>
+        <p class="interview-question"><b>Pergunta:</b> Pensando no potencial do Pauliceia, quais são os próximos passos que vocês imaginam para a plataforma? Existe o desejo de transformá-la em algo maior, como uma comunidade de pessoas que compartilham descobertas, experiências e histórias sobre São Paulo?</p>
+        <div class="interview-answer">
+          <p>Sim, pensando em um potencial futuro desejamos ampliar mais lugares cadastrados com mais interações e informações sobre as regiões com suas histórias, cultura, gastronomia e arte.</p>
+          <p>Sobre transformar em algo maior como uma comunidade, iremos acompanhar como o site se comporta com os acessos e interações que ele recebe. Atendendo certos requisitos e uma boa resolução em métricas. Acredito que conseguimos nos transformar em uma comunidade ou uma rede social em que as pessoas conseguem compartilhar descobertas, experiências, fotografias e histórias sobre os lugares que visitam. Dessa forma, os próprios usuários podem ter uma contribuição para manter a comunidade ou uma rede social atualizada. A Pauliceia, tem como objetivo ser um espaço digital com trocas de conhecimentos e experiências, aproximando as pessoas da cidade e incentivando a todos a conhecer São Paulo por diferentes perspectivas.</p>
+        </div>
+      </dialog>
+
+      <!-- CHAMADA FINAL -->
       <section class="about-cta">
         <div class="page-width about-cta-inner">
-          <div><h2>Bora descobrir SP?</h2><p>É o lugar esperando por você. Encontre um rolê e vá de boa.</p></div>
-          <div><a class="button button-light" href="explorar.html">Explorar agora <span aria-hidden="true">→</span></a><a class="button button-outline-light" href="explorar.html">Ver lugares</a></div>
+          <div>
+            <h2>Bora descobrir SP?</h2>
+            <p>É o lugar esperando por você. Encontre um rolê e vá de boa.</p>
+          </div>
+          <div>
+            <a class="button button-light" href="explorar.html">Explorar agora <span aria-hidden="true">→</span></a>
+            <a class="button button-outline-light" href="explorar.html">Ver lugares</a>
+          </div>
         </div>
       </section>
     </main>
 
+    <!-- RODAPÉ -->
     <footer class="site-footer">
       <div class="page-width footer-inner">
         <div class="footer-grid">
-          <div class="footer-about"><a class="footer-brand" href="index.html">PAULICEIA <span>SP</span></a><p>Um guia para descobrir os lugares, histórias e experiências que fazem São Paulo ser desvairada.</p><em>Inspirado em Pauliceia Desvairada de Mário de Andrade.</em></div>
-          <div class="footer-column"><h2>Navegar</h2><a href="explorar.html">Explorar</a><a href="explorar.html">Lugares</a><a href="sobre.html">Sobre</a></div>
-          <div class="footer-column footer-socials"><h2>Redes</h2><div class="social-links"><a href="https://www.instagram.com/" aria-label="Instagram">IG</a><a href="https://www.tiktok.com/" aria-label="TikTok">TK</a><a href="https://www.youtube.com/" aria-label="YouTube">YT</a><a href="https://open.spotify.com/" aria-label="Spotify">SP</a></div><h2 class="credits-heading">Feito por</h2><p>Guilherme<br />Luara Castro<br />Luana Baldonado<br />Pedro Gabriel<br />Vinicius</p></div>
+          <div class="footer-about">
+            <a class="footer-brand" href="index.html">PAULICEIA <span>SP</span></a>
+            <p>Um guia para descobrir os lugares, histórias e experiências que fazem São Paulo ser desvairada.</p>
+            <em>Inspirado em Pauliceia Desvairada de Mário de Andrade.</em>
+          </div>
+
+          <nav class="footer-column" aria-label="Navegar">
+            <h2>Navegar</h2>
+            <a href="explorar.html">Explorar</a>
+            <a href="explorar.html">Lugares</a>
+            <a href="sobre.html">Sobre</a>
+          </nav>
+
+          <div class="footer-column footer-socials">
+            <h2>Redes</h2>
+            <div class="social-links">
+              <a href="https://www.instagram.com/" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+              <a href="https://www.tiktok.com/" aria-label="TikTok" target="_blank" rel="noopener">TK</a>
+              <a href="https://www.youtube.com/" aria-label="YouTube" target="_blank" rel="noopener">YT</a>
+              <a href="https://open.spotify.com/" aria-label="Spotify" target="_blank" rel="noopener">SP</a>
+            </div>
+            <h2 class="credits-heading">Feito por</h2>
+            <p>Guilherme<br />Luara Castro<br />Luana Baldonado<br />Pedro Gabriel<br />Vinicius</p>
+          </div>
         </div>
-        <div class="footer-bottom"><span>© 2026 Pauliceia — São Paulo, Brasil</span><strong>São Paulo, sempre. <b aria-hidden="true">♥</b></strong></div>
+
+        <div class="footer-bottom">
+          <span>© 2026 Pauliceia — São Paulo, Brasil</span>
+          <strong>São Paulo, sempre. <b aria-hidden="true">♥</b></strong>
+        </div>
       </div>
     </footer>
   </body>
