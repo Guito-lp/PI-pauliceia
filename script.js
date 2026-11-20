@@ -1,91 +1,73 @@
-/* PAULICEIA — menu mobile, tema escuro e alto contraste */
-(() => {
-  const root = document.documentElement;
-  const body = document.body;
+const placeSearch = document.querySelector("#place-search");
+const placeCards = [...document.querySelectorAll(".place-card")];
+const resultsCount = document.querySelector("#results-count");
+const noResults = document.querySelector("#no-results");
 
-  const store = {
-    get(key) {
-      try { return localStorage.getItem(key); } catch { return null; }
-    },
-    set(key, value) {
-      try { localStorage.setItem(key, value); } catch { /* ignora */ }
-    },
+if (placeSearch && resultsCount && noResults) {
+  const filterPlaces = () => {
+    const query = placeSearch.value.trim().toLocaleLowerCase("pt-BR");
+    let visibleCount = 0;
+
+    placeCards.forEach((card) => {
+      const matches = card.dataset.search.toLocaleLowerCase("pt-BR").includes(query);
+      card.hidden = !matches;
+      if (matches) visibleCount += 1;
+    });
+
+    resultsCount.textContent = `${visibleCount} ${visibleCount === 1 ? "lugar encontrado" : "lugares encontrados"}`;
+    noResults.hidden = visibleCount > 0;
   };
 
-  /* ---------- Menu mobile ---------- */
-  const menuButton = document.querySelector(".menu-toggle");
-  const nav = document.getElementById("primary-nav");
+  placeSearch.addEventListener("input", filterPlaces);
+  document.querySelector("#random-place").addEventListener("click", () => {
+    const visibleCards = placeCards.filter((card) => !card.hidden);
+    if (visibleCards.length === 0) return;
+    const randomCard = visibleCards[Math.floor(Math.random() * visibleCards.length)];
+    window.location.href = randomCard.querySelector(".place-card-link").href;
+  });
+}
 
-  function setMenu(open) {
-    if (!menuButton || !nav) return;
-    nav.classList.toggle("is-open", open);
-    menuButton.setAttribute("aria-expanded", String(open));
-    menuButton.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
-  }
+const savePlaceButton = document.querySelector("#save-place");
+if (savePlaceButton) {
+  savePlaceButton.addEventListener("click", () => {
+    const isSaved = savePlaceButton.getAttribute("aria-pressed") === "true";
+    savePlaceButton.setAttribute("aria-pressed", String(!isSaved));
+    savePlaceButton.textContent = isSaved ? "♡ Salvar" : "♥ Salvo";
+  });
+}
 
-  if (menuButton && nav) {
-    menuButton.addEventListener("click", () => {
-      setMenu(menuButton.getAttribute("aria-expanded") !== "true");
-    });
-    nav.addEventListener("click", (e) => {
-      if (e.target.closest("a")) setMenu(false);
-    });
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") setMenu(false);
-    });
-  }
 
-  /* ---------- Tema escuro ---------- */
-  const themeButton = document.querySelector(".theme-toggle");
-
-  function setTheme(night) {
-    body.classList.toggle("night-mode", night);
-    if (!themeButton) return;
-    themeButton.setAttribute("aria-pressed", String(night));
-    themeButton.setAttribute("aria-label", night ? "Desativar tema escuro" : "Ativar tema escuro");
-  }
-
-  setTheme(store.get("pauliceia-theme") === "night");
-  if (themeButton) {
-    themeButton.addEventListener("click", () => {
-      const night = !body.classList.contains("night-mode");
-      setTheme(night);
-      store.set("pauliceia-theme", night ? "night" : "day");
+// Máquina de estados: ENTRADA -> PRONTO. Nunca retorna à ENTRADA sem recarregar.
+(() => {
+  const title = document.getElementById('hero-title');
+  if (!title) return;
+  const letters = [...title.querySelectorAll(':scope > span')];
+  if (!letters.length) return;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let phase = 'entrada';
+  const finishEntry = () => {
+    if (phase !== 'entrada') return;
+    phase = 'pronto';
+    title.classList.add('paul-pronto');
+  };
+  if (reduced.matches) finishEntry();
+  else {
+    const last = letters[letters.length - 1];
+    last.addEventListener('animationend', event => {
+      if (event.target === last && event.animationName === 'paul-entrada') finishEntry();
     });
   }
-
-  /* ---------- Alto contraste ---------- */
-  const contrastButton = document.querySelector(".accessibility-toggle");
-
-  function setContrast(on) {
-    root.classList.toggle("high-contrast", on);
-    if (!contrastButton) return;
-    contrastButton.setAttribute("aria-pressed", String(on));
-    contrastButton.setAttribute("aria-label", on ? "Desativar alto contraste" : "Ativar alto contraste");
-  }
-
-  setContrast(store.get("pauliceia-contrast") === "on");
-  if (contrastButton) {
-    contrastButton.addEventListener("click", () => {
-      const on = !root.classList.contains("high-contrast");
-      setContrast(on);
-      store.set("pauliceia-contrast", on ? "on" : "off");
+  letters.forEach(letter => {
+    letter.addEventListener('pointerenter', event => {
+      if (phase !== 'pronto' || reduced.matches || event.pointerType === 'touch') return;
+      letter.classList.remove('paul-pulando');
+      void letter.offsetWidth;
+      letter.classList.add('paul-pulando');
     });
-  }
-
-  /* ---------- Pop-ups de entrevista ---------- */
-  document.querySelectorAll("[data-interview]").forEach((btn) => {
-    const dialog = document.getElementById(btn.dataset.interview);
-    if (!dialog || typeof dialog.showModal !== "function") return;
-
-    btn.addEventListener("click", () => dialog.showModal());
-
-    dialog.addEventListener("click", (e) => {
-      // fecha no botão × ou ao clicar fora da caixa (no fundo escuro)
-      if (e.target.closest("[data-close]") || e.target === dialog) dialog.close();
+    letter.addEventListener('animationend', event => {
+      if (event.target === letter && event.animationName === 'paul-pulo') {
+        letter.classList.remove('paul-pulando');
+      }
     });
-
-    // devolve o foco ao botão que abriu o pop-up
-    dialog.addEventListener("close", () => btn.focus());
   });
 })();

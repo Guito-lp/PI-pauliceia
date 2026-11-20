@@ -9,8 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css?v=pauliceia-fases-6" />
+    <link rel="stylesheet" href="site-header.css" />
+    <script src="site-header.js" defer></script>
+    <script src="script.js?v=pauliceia-fases-6" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -29,8 +31,8 @@
           <a class="nav-link" href="sobre.html">Sobre</a>
         </nav>
         <div class="header-actions">
-          <button class="accessibility-toggle" type="button" aria-label="Ativar alto contraste" aria-pressed="false">
-            <img src="assets/icon-contrast.svg" alt="" />
+          <button class="accessibility-toggle" type="button" aria-label="Abrir opções de acessibilidade" aria-haspopup="dialog" aria-pressed="false">
+            <img src="assets/icon contrast.svg" alt="" />
           </button>
           <button class="theme-toggle" type="button" aria-label="Ativar tema escuro" aria-pressed="false">
             <img src="assets/icon-dark-mode.svg" alt="" />
@@ -48,8 +50,6 @@
         <div class="hero-shape shape-pink" aria-hidden="true"></div>
         <div class="hero-shape shape-green" aria-hidden="true"></div>
         <div class="hero-shape shape-blue" aria-hidden="true"></div>
-        <div class="hero-shape shape-orange" aria-hidden="true"></div>
-        <img class="hero-spark" src="assets/hero-spark.svg" alt="" />
         <img class="hero-mark" src="assets/hero-mark.svg" alt="" />
 
         <div class="hero-content page-width">
@@ -81,38 +81,42 @@
             </div>
           </div>
 
-          <div class="category-grid">
-            <a class="category-card category-culture" href="#lugares">
-              <img src="assets/category-culture.png" alt="Mural e arte urbana em São Paulo" />
-              <span class="category-content"><span class="category-top"><span class="category-number">01</span><span class="category-arrow" aria-hidden="true">→</span></span><span class="category-name">Arte &amp; Cultura</span><span class="category-description">Museus, galerias, teatros e grafite</span></span>
+          <div class="category-grid home-place-grid">
+            <a class="category-card" href="lugar.html?id=barueri">
+              <img src="assets/Feira%20Noturna%20-%20Barueri/feira-noturna-de-barueri.jpg" alt="Feira Noturna de Barueri" />
+              <span class="category-content"><span class="category-top"><span class="category-number">01</span><span class="category-arrow" aria-hidden="true">→</span></span><span class="category-name">Feira Noturna de Barueri</span><span class="category-description">Gastronomia, artesanato e shows à noite</span></span>
             </a>
-            <a class="category-card category-nature" href="#lugares">
-              <img src="assets/category-nature.png" alt="Trilha cercada por verde" />
-              <span class="category-content"><span class="category-top"><span class="category-number">02</span><span class="category-arrow" aria-hidden="true">→</span></span><span class="category-name">Natureza</span><span class="category-description">Trilhas, represas e mata atlântica</span></span>
+            <a class="category-card" href="lugar.html?id=fabrica">
+              <img src="assets/Fabrica%20de%20Cultura-%20Cap%C3%A3o%20Redondo/F%C3%A1brica-Cap%C3%A3o-site.jpg" alt="Fábrica de Cultura do Capão Redondo" />
+              <span class="category-content"><span class="category-top"><span class="category-number">02</span><span class="category-arrow" aria-hidden="true">→</span></span><span class="category-name">Fábrica de Cultura</span><span class="category-description">Arte, música e oficinas gratuitas</span></span>
             </a>
-            <a class="category-card category-food" href="#lugares">
-              <img src="assets/category-food.png" alt="Banca de comida em mercado" />
-              <span class="category-content"><span class="category-top"><span class="category-number">03</span><span class="category-arrow" aria-hidden="true">→</span></span><span class="category-name">Gastronomia</span><span class="category-description">Feiras, restaurantes e sabores únicos</span></span>
+            <a class="category-card" href="lugar.html?id=grajau">
+              <img src="assets/category-culture.png" alt="Arte e cultura em São Paulo" />
+              <span class="category-content"><span class="category-top"><span class="category-number">03</span><span class="category-arrow" aria-hidden="true">→</span></span><span class="category-name">Centro Cultural Grajaú</span><span class="category-description">Exposições, música, teatro e oficinas</span></span>
             </a>
-            <a class="category-card category-events" href="#lugares">
-              <img src="assets/category-events.png" alt="Multidão em evento cultural" />
-              <span class="category-content"><span class="category-top"><span class="category-number">04</span><span class="category-arrow" aria-hidden="true">→</span></span><span class="category-name">Eventos</span><span class="category-description">Shows, festivais e programação cultural</span></span>
+            <a class="category-card" href="lugar.html?id=colonia">
+              <img src="assets/Colonia%20parelheiros/ecojusa.jpg" alt="Paisagem da Colônia, em Parelheiros" />
+              <span class="category-content"><span class="category-top"><span class="category-number">04</span><span class="category-arrow" aria-hidden="true">→</span></span><span class="category-name">Colônia — Parelheiros</span><span class="category-description">Cultura japonesa, natureza e feiras orgânicas</span></span>
             </a>
-            <a class="category-card category-daytrip" href="#lugares">
-              <img src="assets/category-daytrip.png" alt="Caminho com neblina na serra" />
-              <span class="category-content"><span class="category-top"><span class="category-number">05</span><span class="category-arrow" aria-hidden="true">→</span></span><span class="category-name">Bate-volta</span><span class="category-description">Escapadas de fim de semana perto de SP</span></span>
+            <a class="category-card" href="lugar.html?id=sesc">
+              <img src="assets/Sesc%20Interlagos/IMG_9684-scaled.jpg" alt="SESC Interlagos" />
+              <span class="category-content"><span class="category-top"><span class="category-number">05</span><span class="category-arrow" aria-hidden="true">→</span></span><span class="category-name">SESC Interlagos</span><span class="category-description">Cultura, lazer e vista para a represa</span></span>
             </a>
-            <a class="category-card category-history" href="#lugares">
-              <img src="assets/category-history.png" alt="Edifício histórico paulistano" />
-              <span class="category-content"><span class="category-top"><span class="category-number">06</span><span class="category-arrow" aria-hidden="true">→</span></span><span class="category-name">História</span><span class="category-description">Patrimônios, memórias e arquitetura</span></span>
+            <a class="category-card" href="lugar.html?id=onibus">
+              <img src="assets/category-history.png" alt="Centro histórico de São Paulo" />
+              <span class="category-content"><span class="category-top"><span class="category-number">06</span><span class="category-arrow" aria-hidden="true">→</span></span><span class="category-name">Ônibus Turístico de São Paulo</span><span class="category-description">Um passeio pelos pontos históricos da cidade</span></span>
             </a>
-            <a class="category-card category-photo" href="#lugares">
-              <img src="assets/category-photography.png" alt="Paisagem urbana ao entardecer" />
-              <span class="category-content"><span class="category-top"><span class="category-number">07</span><span class="category-arrow" aria-hidden="true">→</span></span><span class="category-name">Fotografia</span><span class="category-description">Cenários, luz e locações para fotos</span></span>
+            <a class="category-card" href="lugar.html?id=solo-sagrado">
+              <img src="assets/Solo%20Sagrado%20-%20Guarapiranga/solo-sagrado-de-guarapiranga.jpg" alt="Solo Sagrado de Guarapiranga" />
+              <span class="category-content"><span class="category-top"><span class="category-number">07</span><span class="category-arrow" aria-hidden="true">→</span></span><span class="category-name">Solo Sagrado de Guarapiranga</span><span class="category-description">Jardins e contemplação junto à represa</span></span>
             </a>
-            <a class="category-card category-hidden" href="#lugares">
-              <img src="assets/category-hidden.png" alt="Vista de um lugar pouco conhecido" />
-              <span class="category-content"><span class="category-top"><span class="category-number">08</span><span class="category-arrow" aria-hidden="true">→</span></span><span class="category-name">Lugares escondidos</span><span class="category-description">Cantos pouco conhecidos da cidade</span></span>
+            <a class="category-card" href="lugar.html?id=embu">
+              <img src="assets/Embu%20das%20Artes/embudasartes.png" alt="Embu das Artes" />
+              <span class="category-content"><span class="category-top"><span class="category-number">08</span><span class="category-arrow" aria-hidden="true">→</span></span><span class="category-name">Embu das Artes</span><span class="category-description">Feira de artesanato, ateliês e centro histórico</span></span>
+            </a>
+            <a class="category-card" href="lugar.html?id=ccsp">
+              <img src="assets/category-events.png" alt="Programação cultural em São Paulo" />
+              <span class="category-content"><span class="category-top"><span class="category-number">09</span><span class="category-arrow" aria-hidden="true">→</span></span><span class="category-name">Centro Cultural São Paulo</span><span class="category-description">Exposições, shows e programação cultural gratuita</span></span>
             </a>
           </div>
         </div>
@@ -125,23 +129,23 @@
             <a class="text-link text-link-muted" href="explorar.html">Ver todos os lugares <span aria-hidden="true">→</span></a>
           </div>
           <div class="featured-grid">
-            <a class="featured-main" href="https://maps.google.com/?q=Paranapiacaba+SP" target="_blank" rel="noreferrer">
-              <img src="assets/destination-paranapiacaba.png" alt="Caminho envolto em névoa na Vila de Paranapiacaba" />
-              <span class="featured-main-copy"><strong>Estação da Luz → Paranapiacaba</strong><span>Uma vila inglesa escondida entre a serra e a neblina.</span><i aria-hidden="true">→</i></span>
+            <a class="featured-main" href="lugar.html?id=solo-sagrado">
+              <img src="assets/Solo%20Sagrado%20-%20Guarapiranga/solo-sagrado-de-guarapiranga.jpg" alt="Solo Sagrado de Guarapiranga" />
+              <span class="featured-main-copy"><strong>Solo Sagrado de Guarapiranga</strong><span>Jardins, contemplação e paisagens às margens da represa.</span><i aria-hidden="true">→</i></span>
             </a>
             <div class="featured-list">
               <a class="place-row" href="https://maps.google.com/?q=Parelheiros+SP" target="_blank" rel="noreferrer">
-                <img src="assets/destination-parelheiros.png" alt="Plantação de chá em Parelheiros" />
+                <img src="assets/Colonia%20parelheiros/ecojusa.jpg" alt="Paisagem da Colônia, em Parelheiros" />
                 <span><strong>Colônia — Parelheiros</strong><span>Uma colônia japonesa no extremo sul de SP com ryokans, feiras de orgânicos e estradas de terra entre hortas.</span></span>
                 <i aria-hidden="true">→</i>
               </a>
               <a class="place-row" href="https://maps.google.com/?q=SESC+Interlagos" target="_blank" rel="noreferrer">
-                <img src="assets/destination-sesc.png" alt="Interior do SESC Interlagos" />
-                <span><strong>SESC Interlagos</strong><span>Complexo cultural premiado às margens da represa Guarapiranga, shows, exposições e vista épica.</span></span>
+                <img src="assets/Sesc%20Interlagos/IMG_9684-scaled.jpg" alt="SESC Interlagos" />
+                <span><strong>SESC Interlagos</strong><span>Complexo cultural premiado às margens da represa Guarapiranga — shows, exposições e vista épica.</span></span>
                 <i aria-hidden="true">→</i>
               </a>
               <a class="place-row" href="https://maps.google.com/?q=Embu+das+Artes" target="_blank" rel="noreferrer">
-                <img src="assets/destination-embu.png" alt="Mural colorido em Embu das Artes" />
+                <img src="assets/Embu%20das%20Artes/embudasartes.png" alt="Embu das Artes" />
                 <span><strong>Embu das Artes</strong><span>Cidade colonial a 28km de SP com a maior feira de artesanato do país. O fim de semana perfeito.</span></span>
                 <i aria-hidden="true">→</i>
               </a>
@@ -153,27 +157,55 @@
       <section class="social-section paper-section" aria-labelledby="social-title">
         <div class="page-width section-pad">
           <p class="eyebrow social-eyebrow">✦ Redes sociais</p>
-          <h2 class="social-title" id="social-title">Vi no TikTok.<br />Fui conferir.</h2>
+          <h2 class="social-title" id="social-title">Vi no TikTok e no Instagram.<br />Fui conferir.</h2>
           <div class="social-grid">
-            <a class="social-card" href="https://www.tiktok.com/@tripemsp" target="_blank" rel="noreferrer" aria-label="Ver publicação de @tripemsp no TikTok">
-              <img src="assets/social-tripemsp.png" alt="Caminho enevoado em Paranapiacaba" />
+            <a class="social-card" href="https://www.tiktok.com/@millenyoliveirx/video/7556750313089289484" target="_blank" rel="noopener noreferrer" aria-label="Ver vídeo de @millenyoliveirx sobre a Feira Noturna de Barueri no TikTok">
+              <img src="assets/Feira%20Noturna%20-%20Barueri/DSC04611.JPG" alt="Feira Noturna de Barueri" loading="lazy" />
               <span class="play-button" aria-hidden="true">▶</span>
-              <span class="social-caption"><strong>@tripemsp</strong><span>Vila vitoriana a 60km de SP com névoa todo dia 🌫️</span><small>◉ 1.4M views</small></span>
+              <span class="social-caption"><strong>@millenyoliveirx · TikTok</strong><span>Uma noite na Feira Noturna de Barueri</span></span>
             </a>
-            <a class="social-card" href="https://www.tiktok.com/@mochileirasp" target="_blank" rel="noreferrer" aria-label="Ver publicação de @mochileirasp no TikTok">
-              <img src="assets/social-mochileirasp.png" alt="Plantação verde nas colinas" />
+            <a class="social-card" href="https://www.tiktok.com/@explore.comigo/video/7540435018141683000" target="_blank" rel="noopener noreferrer" aria-label="Ver vídeo de @explore.comigo sobre a Feira Noturna de Barueri no TikTok">
+              <img src="assets/Feira%20Noturna%20-%20Barueri/DSC04613.JPG" alt="Bancas e movimento na Feira Noturna de Barueri" loading="lazy" />
               <span class="play-button" aria-hidden="true">▶</span>
-              <span class="social-caption"><strong>@mochileirasp</strong><span>Japão em São Paulo? Isso não deveria existir 🇯🇵</span><small>◉ 987K views</small></span>
+              <span class="social-caption"><strong>@explore.comigo · TikTok</strong><span>Conheça a Feira Noturna de Barueri</span></span>
             </a>
-            <a class="social-card" href="https://www.tiktok.com/@ccsaopaulo" target="_blank" rel="noreferrer" aria-label="Ver publicação de @ccsaopaulo no TikTok">
-              <img src="assets/social-ccsaopaulo.png" alt="Espaço cultural contemporâneo" />
+            <a class="social-card" href="https://www.tiktok.com/@alinesodeboa/video/7495393630799023415" target="_blank" rel="noopener noreferrer" aria-label="Ver vídeo de @alinesodeboa sobre a Fábrica de Cultura do Capão Redondo no TikTok">
+              <img src="assets/Fabrica%20de%20Cultura-%20Cap%C3%A3o%20Redondo/F%C3%A1brica-Cap%C3%A3o-site.jpg" alt="Fábrica de Cultura do Capão Redondo" loading="lazy" />
               <span class="play-button" aria-hidden="true">▶</span>
-              <span class="social-caption"><strong>@ccsaopaulo</strong><span>47 mil m² de cultura. De graça. No centro de SP. 🤯</span><small>◉ 2.1M views</small></span>
+              <span class="social-caption"><strong>@alinesodeboa · TikTok</strong><span>Rolê cultural na Fábrica de Cultura</span></span>
             </a>
-            <a class="social-card" href="https://www.tiktok.com/@viajemsp" target="_blank" rel="noreferrer" aria-label="Ver publicação de @viajemsp no TikTok">
-              <img src="assets/social-viajemsp.png" alt="Pessoa diante de um mural em Embu das Artes" />
+            <a class="social-card" href="https://www.tiktok.com/@honorato.exe/video/7663979916475518226" target="_blank" rel="noopener noreferrer" aria-label="Ver vídeo de @honorato.exe sobre o Centro Cultural Grajaú no TikTok">
+              <img src="assets/explore-grajau.png" alt="Centro Cultural Grajaú" loading="lazy" />
               <span class="play-button" aria-hidden="true">▶</span>
-              <span class="social-caption"><strong>@viajemsp</strong><span>Embu das Artes num domingo de manhã é outro nível 🎨</span><small>◉ 654K views</small></span>
+              <span class="social-caption"><strong>@honorato.exe · TikTok</strong><span>Uma visita ao Centro Cultural Grajaú</span></span>
+            </a>
+            <a class="social-card" href="https://www.tiktok.com/@paulinhonatrilha/video/7662152991947918613" target="_blank" rel="noopener noreferrer" aria-label="Ver vídeo de @paulinhonatrilha sobre a Colônia Fest em Parelheiros no TikTok">
+              <img src="assets/Colonia%20parelheiros/ecojusa.jpg" alt="Colônia, em Parelheiros" loading="lazy" />
+              <span class="play-button" aria-hidden="true">▶</span>
+              <span class="social-caption"><strong>@paulinhonatrilha · TikTok</strong><span>Colônia Fest em Parelheiros</span></span>
+            </a>
+            <a class="social-card" href="https://www.tiktok.com/@brugrazi/video/7670935871339646229" target="_blank" rel="noopener noreferrer" aria-label="Ver vídeo de @brugrazi sobre natureza e ecoturismo em Parelheiros no TikTok">
+              <img src="assets/Solo%20Sagrado%20-%20Guarapiranga/20261102_105753.jpg" alt="Área verde em Parelheiros" loading="lazy" />
+              <span class="play-button" aria-hidden="true">▶</span>
+              <span class="social-caption"><strong>@brugrazi · TikTok</strong><span>Trilhas, turismo rural e natureza em Parelheiros</span></span>
+            </a>
+            <a class="social-card" href="https://www.tiktok.com/@catracalivre/video/7544795714442775813" target="_blank" rel="noopener noreferrer" aria-label="Ver vídeo de @catracalivre sobre natureza e ecoturismo em Parelheiros no TikTok">
+              <img src="assets/Solo%20Sagrado%20-%20Guarapiranga/20261102_103359.jpg" alt="Paisagem natural em Parelheiros" loading="lazy" />
+              <span class="play-button" aria-hidden="true">▶</span>
+              <span class="social-caption"><strong>@catracalivre · TikTok</strong><span>Experiências de ecoturismo no extremo sul</span></span>
+            </a>
+            <a class="social-card" href="https://www.tiktok.com/@vumboradan/video/7572917023152344328" target="_blank" rel="noopener noreferrer" aria-label="Ver vídeo de @vumboradan sobre Parelheiros no TikTok">
+              <img src="assets/Colonia%20parelheiros/IMG_3127.jpg" alt="Paisagem e natureza em Parelheiros" loading="lazy" />
+              <span class="play-button" aria-hidden="true">▶</span>
+              <span class="social-caption"><strong>@vumboradan · TikTok</strong><span>Um passeio por Parelheiros</span></span>
+            </a>
+            <a class="social-card" href="https://www.instagram.com/p/DV60ZF8gXXZ/" target="_blank" rel="noopener noreferrer" aria-label="Ver publicação sobre Parelheiros no Instagram">
+              <img src="assets/Colonia%20parelheiros/IMG_4049.jpg" alt="Paisagem da região de Parelheiros" loading="lazy" />
+              <span class="social-caption"><strong>Instagram · Publicação</strong><span>Descubra Parelheiros</span></span>
+            </a>
+            <a class="social-card" href="https://www.instagram.com/parelheirosturistico/" target="_blank" rel="noopener noreferrer" aria-label="Visitar o perfil Parelheiros Turístico no Instagram">
+              <img src="assets/Solo%20Sagrado%20-%20Guarapiranga/solo-sagrado-de-guarapiranga.jpg" alt="Solo Sagrado de Guarapiranga, em Parelheiros" loading="lazy" />
+              <span class="social-caption"><strong>Instagram · @parelheirosturistico</strong><span>Mais experiências para conhecer Parelheiros</span></span>
             </a>
           </div>
         </div>
