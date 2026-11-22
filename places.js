@@ -141,8 +141,16 @@ window.PLACES = [{
     city: 'São Paulo — SP',
     tags: ['cultura', 'arte', 'gratuito'],
     free: true,
-    image: 'assets/destination-grajau.png',
-    gallery: ['assets/destination-grajau.png', 'assets/category-events.png', 'assets/category-hidden.png'],
+    image: 'assets/Centro%20Cultural%20Graja%C3%BA/Centro%20cultural%20grajau/images.jpeg',
+    gallery: [
+        'assets/Centro%20Cultural%20Graja%C3%BA/Centro%20cultural%20grajau/images.jpeg',
+        'assets/Centro%20Cultural%20Graja%C3%BA/Centro%20cultural%20grajau/1636751097618ed6f91cafb_1636751097_3x2_md.jpg',
+        'assets/Centro%20Cultural%20Graja%C3%BA/Centro%20cultural%20grajau/images%20%281%29.jpeg',
+        'assets/Centro%20Cultural%20Graja%C3%BA/Centro%20cultural%20grajau/images%20%282%29.jpeg',
+        'assets/Centro%20Cultural%20Graja%C3%BA/Centro%20cultural%20grajau/images%20%283%29.jpeg',
+        'assets/Centro%20Cultural%20Graja%C3%BA/Centro%20cultural%20grajau/entrada2-min.jpg',
+        'assets/Centro%20Cultural%20Graja%C3%BA/Centro%20cultural%20grajau/d843c002-3d89-4c82-9c9f-814caa339939_rw_3840.jpg'
+    ],
     blurb: 'Espaço cultural no extremo sul que transformou a cena artística do Grajaú — e de graça.',
     quick: {
         time: '1 a 2 horas',
@@ -257,8 +265,15 @@ window.PLACES = [{
     city: 'São Paulo — SP',
     tags: ['historia', 'inusitado', 'cultura'],
     free: false,
-    image: 'assets/category-history.png',
-    gallery: ['assets/category-history.png', 'assets/category-culture.png', 'assets/category-hidden.png'],
+    image: 'assets/Onibus%20Turistico%20de%20S%C3%A3o%20Paulo/Onibus%20Turistico%20de%20S%C3%A3o%20Paulo/images.jpeg',
+    gallery: [
+        'assets/Onibus%20Turistico%20de%20S%C3%A3o%20Paulo/Onibus%20Turistico%20de%20S%C3%A3o%20Paulo/images.jpeg',
+        'assets/Onibus%20Turistico%20de%20S%C3%A3o%20Paulo/Onibus%20Turistico%20de%20S%C3%A3o%20Paulo/circular-turismo-sp.jpeg',
+        'assets/Onibus%20Turistico%20de%20S%C3%A3o%20Paulo/Onibus%20Turistico%20de%20S%C3%A3o%20Paulo/DSC_0625.jpg',
+        'assets/Onibus%20Turistico%20de%20S%C3%A3o%20Paulo/Onibus%20Turistico%20de%20S%C3%A3o%20Paulo/img_1658.jpg',
+        'assets/Onibus%20Turistico%20de%20S%C3%A3o%20Paulo/Onibus%20Turistico%20de%20S%C3%A3o%20Paulo/onibus-turismo-sp.jpg',
+        'assets/Onibus%20Turistico%20de%20S%C3%A3o%20Paulo/Onibus%20Turistico%20de%20S%C3%A3o%20Paulo/volvo-hibrido-txt_620x467.jpg'
+    ],
     blurb: 'Tour em ônibus de dois andares descapotado pelo centro histórico. Parece Europa, mas é SP.',
     quick: {
         time: '2h30 o percurso',
@@ -365,34 +380,4 @@ window.PLACES = [{
     tips: ['Vá cedo aos domingos para evitar o trânsito de volta', 'Pechinche com educação: faz parte da feira', 'Reserve o almoço se for em grupo'],
     coords: [-23.6489, -46.8527],
     weather: [-23.6489, -46.8527]
-}, {
-    id: 'ccsp',
-    title: 'Centro Cultural São Paulo',
-    city: 'São Paulo — SP',
-    tags: ['cultura', 'arte', 'musica'],
-    free: true,
-    image: 'assets/destination-ccsp.png',
-    gallery: ['assets/destination-ccsp.png', 'assets/category-events.png', 'assets/destination-sesc.png'],
-    blurb: '47.000 m² de cultura de graça no centro da cidade. Biblioteca, cinema, shows, teatro e exposições.',
-    quick: {
-        time: '1 a 4 horas',
-        cost: 'Entrada gratuita'
-    },
-    quote: 'Um prédio inteiro de cultura. De graça. Sem exagero.',
-    history: 'Inaugurado em 1982, o CCSP foi pensado como um espaço de convivência cultural aberto à cidade, com arquitetura moderna e áreas que misturam biblioteca, salas de espetáculo e galerias.',
-    about: 'Biblioteca, discoteca, cinema, teatro, mostras de artes visuais e uma agenda recheada de shows. Muita gente passa a tarde inteira por lá sem gastar nada.',
-    todo: ['Ver exposições gratuitas', 'Ler na biblioteca', 'Assistir a shows e peças', 'Passear pelos jardins e terraços'],
-    info: {
-        duration: '1 a 4 horas',
-        cost: 'Entrada gratuita · Alguns espetáculos podem ser pagos',
-        hours: 'Confira o horário atualizado no site oficial',
-        how: 'Metrô Linha 1 (Azul), estação Vergueiro, ao lado do prédio.'
-    },
-    tiktok: {
-        handle: '@guiadesp',
-        text: 'Esse rolê grátis no centro é muito subestimado 🎬'
-    },
-    tips: ['Consulte a agenda de shows e cinema antes de ir', 'Aproveite a biblioteca para um descanso no meio do dia', 'Combine com um passeio pela Av. Paulista, perto dali'],
-    coords: [-23.5707, -46.6439],
-    weather: [-23.5707, -46.6439]
 }];

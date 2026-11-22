@@ -44,7 +44,7 @@ img { display: block; }
 
 .hero { position: relative; min-height: 788px; overflow: hidden; isolation: isolate; background: var(--night); color: #fff; }
 .hero-photo, .hero-texture, .hero-scrim { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; }
-.hero-photo { left: auto; width: 78%; object-fit: cover; object-position: center 48%; }
+.hero-photo { left: auto; width: 100%; object-fit: cover; object-position: center 48%; }
 .hero-texture { z-index: -1; background: url("assets/texture.png") left top / 180px auto repeat; opacity: .12; mix-blend-mode: screen; }
 .hero-scrim { z-index: -1; background: linear-gradient(90deg, #0d0d0d 12%, rgba(13,13,13,.88) 31%, rgba(13,13,13,.43) 56%, rgba(13,13,13,.04) 100%), linear-gradient(0deg, rgba(13,13,13,.8), transparent 38%); }
 .hero-content { position: relative; padding-top: 114px; padding-bottom: 68px; }
@@ -70,9 +70,8 @@ img { display: block; }
 .shape-green { bottom: 72px; left: 20%; width: 150px; aspect-ratio: 1; background: var(--green); opacity: .82; }
 .shape-blue { top: 40px; right: 25%; width: 110px; aspect-ratio: 1; background: var(--blue); }
 .shape-orange { top: 48%; right: 5%; width: 56px; aspect-ratio: 1; background: var(--orange); }
-.hero-spark, .hero-mark { position: absolute; z-index: 0; pointer-events: none; }
+.hero-spark { position: absolute; z-index: 0; pointer-events: none; }
 .hero-spark { top: 116px; right: calc(11% + 90px); }
-.hero-mark { top: 65%; left: 52%; }
 
 .paper-section { background: var(--paper); color: var(--paper-text); transition: background .25s, color .25s; }
 .section-pad { padding-block: 56px; }
@@ -215,7 +214,6 @@ body.night-mode .category-card { border-color: #343434; }
   .shape-pink { bottom: 31px; left: 54%; width: 125px; }
   .shape-orange { top: 45%; right: 8%; width: 38px; }
   .hero-spark { top: 138px; right: 2%; width: 56px; height: 56px; }
-  .hero-mark { display: none; }
   .section-pad { padding-block: 42px; }
   .section-heading { align-items: flex-start; flex-direction: column; gap: 20px; }
   .display-heading { font-size: 36px; }
