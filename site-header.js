@@ -67,6 +67,49 @@
     set('pauliceia-theme', enabled ? 'dark' : 'light');
   });
 
+  // Título "Pauliceia": letras entram uma a uma e depois pulam ao passar o mouse.
+  // Fases: ENTRADA -> PRONTO (nunca volta à entrada sem recarregar).
+  const savedMotion = (() => {
+    try { return JSON.parse(get('pauliceia-a11y') || '{}').motion === true; } catch { return false; }
+  })();
+  // Só o botão "Reduzir animações" do painel desliga o título (não a configuração do sistema).
+  const motionOff = () => root.classList.contains('reduce-motion');
+  document.querySelectorAll('.paul-letters').forEach((title) => {
+    const letters = [...title.children].filter((el) => !el.classList.contains('paul-sr'));
+    if (!letters.length) return;
+    letters.forEach((letter, index) => letter.style.setProperty('--i', index));
+    let ready = false;
+    const finishEntry = () => {
+      if (ready) return;
+      ready = true;
+      title.classList.add('paul-pronto');
+    };
+    // Sem animação (preferência do sistema ou do painel), pula direto para PRONTO.
+    if (motionOff() || savedMotion) finishEntry();
+    else {
+      const last = letters[letters.length - 1];
+      last.addEventListener('animationend', (event) => {
+        if (event.target === last && event.animationName === 'paul-entrada') finishEntry();
+      });
+      // Segurança: se a animação for interrompida, o título não fica travado.
+      setTimeout(finishEntry, 700 + letters.length * 140 + 300);
+    }
+    letters.forEach((letter) => {
+      const jump = () => {
+        if (!ready || motionOff()) return;
+        letter.classList.remove('paul-pulando');
+        void letter.offsetWidth;
+        letter.classList.add('paul-pulando');
+      };
+      // Mouse: pula ao passar por cima. Celular: pula ao tocar na letra.
+      letter.addEventListener('pointerenter', (event) => { if (event.pointerType !== 'touch') jump(); });
+      letter.addEventListener('pointerdown', (event) => { if (event.pointerType === 'touch') jump(); });
+      letter.addEventListener('animationend', (event) => {
+        if (event.target === letter && event.animationName === 'paul-pulo') letter.classList.remove('paul-pulando');
+      });
+    });
+  });
+
   const accessibilityButton = document.querySelector('.accessibility-toggle');
   if (!accessibilityButton) return;
 
@@ -207,16 +250,28 @@
     }
     const main = document.querySelector('main');
     if (!main) return;
-    const utterance = new SpeechSynthesisUtterance(main.innerText.slice(0, 4000));
-    utterance.lang = 'pt-BR';
-    utterance.onend = utterance.onerror = () => {
-      reading = false;
-      paintReadButton();
-    };
+    // Lê o texto em frases curtas: textos longos numa única fala são cortados pelo navegador.
+    const text = main.innerText.replace(/\s+/g, ' ').trim();
+    const chunks = text.match(/[^.!?…]+[.!?…]*\s*/g) || [text];
+    const voice = window.speechSynthesis.getVoices().find((v) => v.lang.toLowerCase().startsWith('pt'));
+    window.speechSynthesis.cancel();
     reading = true;
     paintReadButton();
-    window.speechSynthesis.speak(utterance);
+    chunks.forEach((chunk, index) => {
+      const utterance = new SpeechSynthesisUtterance(chunk.trim());
+      utterance.lang = 'pt-BR';
+      if (voice) utterance.voice = voice;
+      if (index === chunks.length - 1) {
+        utterance.onend = () => { reading = false; paintReadButton(); };
+      }
+      utterance.onerror = (event) => {
+        if (event.error === 'interrupted' || event.error === 'canceled') return;
+        stopReading();
+      };
+      window.speechSynthesis.speak(utterance);
+    });
   });
+  window.addEventListener('pagehide', () => { if (canSpeak) window.speechSynthesis.cancel(); });
 
   accessibilityButton.addEventListener('click', () => setPanel(panel.hidden));
   document.addEventListener('keydown', (event) => {

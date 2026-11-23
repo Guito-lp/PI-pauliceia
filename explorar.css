@@ -199,7 +199,7 @@ h1,h2,h3 {
 }
 
 .accessibility-toggle img {
-    width: 13px,0;
+    width: 13px;
     border-radius: 50%;
     color: var(--yellow);
     font-size: 1rem;
@@ -625,30 +625,64 @@ body.night-mode .pill-btn {
 
 .tabs {
     display: flex;
-    gap: 2px;
+    gap: 8px;
+    padding-block: 12px;
     border-top: 1px solid var(--line);
-    overflow-x: auto
+    overflow-x: auto;
+    scrollbar-width: none
+}
+
+.tabs::-webkit-scrollbar {
+    display: none
 }
 
 .tab {
-    background: none;
-    border: 0;
-    border-bottom: 3px solid transparent;
-    padding: 13px 16px;
+    flex: 0 0 auto;
+    min-height: 40px;
+    padding: 8px 18px;
+    border: 2px solid #111;
+    border-radius: 999px;
+    background: #fff;
+    color: #111;
     font-size: .82rem;
-    font-weight: 600;
-    color: var(--muted);
-    white-space: nowrap
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background .15s, transform .15s
+}
+
+.tab:hover {
+    background: #fff3c4
 }
 
 .tab[aria-selected="true"] {
-    color: inherit;
+    background: var(--yellow, #ffd43b);
+    color: #111;
     font-weight: 800;
-    border-bottom-color: #111
+    box-shadow: 0 3px 0 #111;
+    transform: translateY(-1px)
+}
+
+.tab:focus-visible {
+    outline: 3px solid #3155ff;
+    outline-offset: 2px
+}
+
+body.night-mode .tab {
+    border-color: #555;
+    background: #1d1d1d;
+    color: #f0e8d0
+}
+
+body.night-mode .tab:hover {
+    border-color: var(--yellow, #ffd43b)
 }
 
 body.night-mode .tab[aria-selected="true"] {
-    border-bottom-color: var(--yellow)
+    border-color: var(--yellow, #ffd43b);
+    background: var(--yellow, #ffd43b);
+    color: #111;
+    box-shadow: 0 3px 0 #000
 }
 
 .detail-columns {
@@ -924,6 +958,34 @@ body.night-mode .weather {
     font-size: 1.7rem
 }
 
+.weather-updated {
+    display: block;
+    margin-top: 6px;
+    font-size: .7rem;
+    opacity: .7
+}
+
+.live-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-left: 6px;
+    border-radius: 50%;
+    background: #e5383b;
+    vertical-align: middle
+}
+
+.live-label {
+    margin-left: 4px;
+    color: #c1121f;
+    font-size: .65rem;
+    font-weight: 800;
+    vertical-align: middle
+}
+
+body.night-mode .live-label {
+    color: #ff6b6b
+}
 .weather-side {
     font-size: 0.75rem;
     font-weight: 700;

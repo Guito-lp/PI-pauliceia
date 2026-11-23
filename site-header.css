@@ -1,10 +1,10 @@
-.page-width,
+﻿.page-width,
 .header-inner {
-  width: min(calc(100% - 80px), 1440px);
+  width: min(calc(100% - 80px), var(--site-max, 1440px));
   margin-inline: auto;
 }
 
-button:not(.accessibility-toggle):not(.theme-toggle) { border-radius: 20px !important; }
+button:not(.accessibility-toggle):not(.theme-toggle):not(.tab) { border-radius: 20px !important; }
 
 .site-header {
   position: sticky;
@@ -30,7 +30,7 @@ button:not(.accessibility-toggle):not(.theme-toggle) { border-radius: 20px !impo
   flex: 0 0 auto;
   align-items: center;
   gap: 8px;
-  font: 900 19px/1 "DM Sans", sans-serif;
+  font: 900 1.1875rem/1 "DM Sans", sans-serif;
   letter-spacing: -.6px;
 }
 
@@ -41,7 +41,7 @@ button:not(.accessibility-toggle):not(.theme-toggle) { border-radius: 20px !impo
   border-radius: 5px;
   background: #ffd43b;
   color: #171717;
-  font: 800 12px/1 Inter, sans-serif;
+  font: 800 0.75rem/1 Inter, sans-serif;
   letter-spacing: .4px;
 }
 
@@ -59,7 +59,7 @@ button:not(.accessibility-toggle):not(.theme-toggle) { border-radius: 20px !impo
   border: 1px solid transparent;
   border-radius: 15px;
   color: #fff;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 600;
   transition: background .2s, color .2s;
 }
@@ -140,8 +140,10 @@ button:not(.accessibility-toggle):not(.theme-toggle) { border-radius: 20px !impo
   top: 48px;
   right: 0;
   z-index: 70;
-  width: 290px;
-  overflow: hidden;
+  width: min(20rem, calc(100vw - 32px));
+  max-height: calc(100vh - 80px);
+  overflow-x: hidden;
+  overflow-y: auto;
   border: 2px solid #111;
   border-radius: 14px;
   background: #fff;
@@ -199,22 +201,71 @@ button:not(.accessibility-toggle):not(.theme-toggle) { border-radius: 20px !impo
 .a11y-state { padding: 2px 6px; border-radius: 6px; background: #f2e6d1; color: #111; font-size: 0.75rem; font-weight: 800; }
 
 .brand-tag { font-weight: 700; }
-.a11y-reset { justify-content: center; border-color: #ff3fa4; color: #ff3fa4; font-weight: 800; }
+.a11y-reset { justify-content: center; border-color: #c2006b; color: #c2006b; font-weight: 800; }
+.a11y-btn:focus-visible,
+.a11y-close:focus-visible { outline: 3px solid #3155ff; outline-offset: 2px; }
+.a11y-close:focus-visible { outline-color: #ffd43b; }
 
-html.hc { filter: contrast(1.5); }
-html.hc a:not(.button):not(.card-cta):not(.nav-link) { text-decoration: underline; }
-html.invert { filter: invert(1) hue-rotate(180deg); }
-html.hc.invert { filter: contrast(1.5) invert(1) hue-rotate(180deg); }
-html.invert img,
-html.invert iframe,
-html.invert .map-box { filter: invert(1) hue-rotate(180deg); }
-html.spacing body { letter-spacing: .04em; word-spacing: .14em; line-height: 1.85; }
-html.links a:not(.button):not(.card-cta):not(.nav-link):not(.brand) {
-  color: var(--blue);
+/* ===== Efeitos do painel de acessibilidade ===== */
+
+/* Alto contraste: reforça cores, textos secundários e bordas. */
+html.hc { filter: contrast(1.3) saturate(1.15); }
+html.hc body { --muted: #000; }
+html.hc body.night-mode { --muted: #fff; }
+html.hc a:not(.button):not(.card-cta):not(.nav-link):not(.brand) {
   text-decoration: underline;
-  text-decoration-thickness: 2px;
   text-underline-offset: 3px;
 }
+html.hc :focus-visible { outline: 3px solid #ffd43b !important; outline-offset: 3px !important; box-shadow: 0 0 0 6px #000 !important; }
+
+/* Contraste invertido: inverte a página e "desinverte" fotos, vídeos e mapas. */
+html.invert { filter: invert(1) hue-rotate(180deg); background: #fff; }
+html.hc.invert { filter: contrast(1.3) saturate(1.15) invert(1) hue-rotate(180deg); }
+html.invert img,
+html.invert video,
+html.invert iframe { filter: invert(1) hue-rotate(180deg); }
+/* Ícones de interface (SVG) devem acompanhar a inversão, não as fotos. */
+html.invert img[src$=".svg"] { filter: none; }
+
+/* Espaçamento de texto (WCAG 1.4.12): precisa vencer os estilos de cada elemento. */
+html.spacing body * {
+  letter-spacing: .12em !important;
+  word-spacing: .16em !important;
+}
+html.spacing .paul-letters,
+html.spacing .paul-letters * { letter-spacing: normal !important; word-spacing: normal !important; }
+html.spacing p,
+html.spacing li,
+html.spacing dd,
+html.spacing dt,
+html.spacing blockquote,
+html.spacing label,
+html.spacing [class*="description"],
+html.spacing [class*="caption"] > span { line-height: 1.8 !important; }
+html.spacing p { margin-bottom: 1.2em; }
+
+/* Destacar links: links de texto ganham fundo amarelo; cards e botões, contorno. */
+html.links a {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 3px;
+}
+html.links a:not(.button):not(.nav-link):not(.brand):not([class*="card"]):not(.place-row):not(.featured-main):not([aria-label]) {
+  background: #ffd43b !important;
+  color: #111 !important;
+  box-shadow: 0 0 0 2px #ffd43b;
+}
+html.links a.button,
+html.links a.nav-link,
+html.links a[class*="card"],
+html.links a.place-row,
+html.links a.featured-main {
+  outline: 3px dashed #ff4fa3 !important;
+  outline-offset: 2px;
+}
+
+/* Reduzir animações: inclui o próprio <html> (rolagem suave). */
+html.reduce-motion,
 html.reduce-motion *,
 html.reduce-motion *::before,
 html.reduce-motion *::after {
@@ -223,9 +274,51 @@ html.reduce-motion *::after {
   animation: none !important;
 }
 
+/* ===== Título "Pauliceia" com letras animadas (home e Sobre) ===== */
+.paul-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.paul-letters > span:not(.paul-sr) {
+  display: inline-block;
+  position: relative;
+  cursor: default;
+  transform: translate3d(0, 0, 0);
+  animation: paul-entrada .7s cubic-bezier(.16, 1, .3, 1) both;
+  animation-delay: calc(var(--i, 0) * 140ms);
+}
+@keyframes paul-entrada {
+  from { opacity: 0; transform: translateX(-.45em); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.paul-letters.paul-pronto > span:not(.paul-sr) {
+  animation: none;
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.paul-letters.paul-pronto > span.paul-pulando {
+  animation: paul-pulo .55s ease-out both;
+}
+@keyframes paul-pulo {
+  0%, 100% { transform: translateY(0); }
+  45% { transform: translateY(-.18em); }
+}
+/* O título anima mesmo com "efeitos de animação" desligados no sistema
+   (as outras animações do site continuam seguindo o sistema).
+   Quem precisar desligar usa "Reduzir animações" no painel do site. */
+@media (prefers-reduced-motion: reduce) {
+  html:not(.reduce-motion) .paul-letters > span:not(.paul-sr) { animation-duration: .7s !important; }
+  html:not(.reduce-motion) .paul-letters.paul-pronto > span.paul-pulando { animation-duration: .55s !important; }
+}
+html.reduce-motion .paul-letters > span:not(.paul-sr) { animation: none !important; opacity: 1 !important; transform: none !important; }
+
 @media (max-width: 760px) {
   .page-width,
-  .header-inner { width: min(calc(100% - 40px), 1440px); }
+  .header-inner { width: min(calc(100% - 40px), var(--site-max, 1440px)); }
 
   .site-header { height: 60px; }
   .menu-toggle { display: flex; }
@@ -248,18 +341,96 @@ html.reduce-motion *::after {
     position: fixed;
     top: 68px;
     right: 16px;
-    width: min(290px, calc(100vw - 32px));
+    width: min(20rem, calc(100vw - 32px));
   }
 }
 
 @media (max-width: 420px) {
   .page-width,
-  .header-inner { width: min(calc(100% - 32px), 1440px); }
-  .brand { gap: 6px; font-size: 17px; }
+  .header-inner { width: min(calc(100% - 32px), var(--site-max, 1440px)); }
+  .brand { gap: 6px; font-size: 1.0625rem; }
   .header-actions { gap: 5px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .menu-toggle span,
   .nav-link { transition: none; }
+}
+
+/* ===== Responsividade compartilhada (todas as páginas) ===== */
+
+/* Nada passa da largura da tela; mídia nunca estoura o contêiner. */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { overflow-x: clip; }
+img, video, iframe, svg { max-width: 100%; }
+
+/* Monitores grandes: mais largura útil (tamanho das fontes não muda). */
+@media (min-width: 1600px) {
+  :root { --site-max: 1520px; }
+}
+@media (min-width: 1920px) {
+  :root { --site-max: 1680px; }
+  .social-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+@media (min-width: 2560px) {
+  :root { --site-max: 2080px; }
+}
+
+/* Monitores grandes: imagens crescem junto com a largura (não viram faixas finas). */
+@media (min-width: 1600px) {
+  .home-place-grid .category-card { height: clamp(260px, 15vw, 420px) !important; }
+  .featured-main { min-height: clamp(320px, 22vw, 560px); }
+  .catalog-image { height: clamp(175px, 11vw, 300px); }
+  .detail-hero { height: clamp(360px, 24vw, 560px); }
+  .team-card img { height: clamp(250px, 15vw, 380px); }
+  .hero { min-height: clamp(788px, 42vw, 1100px); }
+}
+
+/* Bolas da abertura — computador/tablet: diagonal pela foto, longe do texto e do botão.
+   Azul (alto, meio) → amarela (alto, direita) → rosa (baixo, direita) → verde (baixo, centro). */
+@media (min-width: 761px) {
+  .shape-blue   { top: 6%;  right: 29%; left: auto; bottom: auto; width: clamp(70px, 7vw, 120px); }
+  .shape-yellow { top: 14%; right: 7%;  left: auto; bottom: auto; width: clamp(150px, 15vw, 260px); }
+  .shape-pink   { bottom: 10%; right: 18%; left: auto; top: auto; width: clamp(130px, 13vw, 220px); }
+  .shape-green  { bottom: 6%;  left: 40%; right: auto; top: auto; width: clamp(90px, 8vw, 140px); }
+}
+
+/* Celulares: bolas pequenas nos cantos, sem cobrir textos nem umas às outras. */
+@media (max-width: 760px) {
+  .shape-blue { top: 72px; right: 104px; width: 44px; }
+  .shape-yellow { top: 92px; right: -56px; width: 120px; }
+  .shape-pink { left: auto; top: auto; right: -30px; bottom: -30px; width: 120px; }
+  .shape-green { left: auto; top: auto; right: 110px; bottom: 18px; width: 64px; }
+  .hero-spark { display: none; }
+}
+@media (max-width: 420px) {
+  /* Cards do TikTok em 2 colunas: legenda cabe e o "play" não fica em cima do texto. */
+  .social-card .play-button { top: 36%; }
+  .social-caption strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+}
+
+/* Celulares */
+@media (max-width: 760px) {
+  .a11y-btn { min-height: 44px; }
+}
+
+/* Somente iPhone/iPad (Safari e qualquer navegador no iOS): campos com 16px
+   evitam o zoom automático ao tocar. Nos outros aparelhos o tamanho não muda. */
+@supports (-webkit-touch-callout: none) {
+  input, select, textarea { font-size: 16px !important; }
+}
+@media (max-width: 560px) {
+  /* Cards de lugares da home em uma coluna: o texto não cabia em duas. */
+  .home-place-grid { grid-template-columns: 1fr !important; }
+  .home-place-grid .category-card { height: 210px !important; min-height: 0; }
+}
+@media (max-width: 380px) {
+  .social-links { flex-wrap: wrap; }
+  .footer-grid { grid-template-columns: 1fr !important; }
+}
+
+/* Celular deitado / telas baixas: hero não ocupa mais que a tela. */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero { min-height: 100vh !important; }
+  .hero-content { padding-top: 48px !important; }
 }

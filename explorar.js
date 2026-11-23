@@ -108,13 +108,34 @@
 
     // ----[Clima (Open-Meteo, sem chave de API)]----
     const WX = c => c === 0 ? ['☀️', 'Céu limpo'] : c <= 2 ? ['⛅', 'Parcialmente nublado'] : c === 3 ? ['☁️', 'Nublado'] : c <= 48 ? ['🌫️', 'Névoa'] : c <= 57 ? ['🌦️', 'Garoa'] : c <= 67 ? ['🌧️', 'Chuva'] : c <= 77 ? ['❄️', 'Neve'] : c <= 82 ? ['🌧️', 'Pancadas'] : ['⛈️', 'Tempestade'];
+    // Atualiza sozinho a cada 5 min, ao voltar para a aba e ao reconectar.
     const [wl, wn] = p.weather;
-    fetch(`https://api.open-meteo.com/v1/forecast?latitude=${wl}&longitude=${wn}&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code&timezone=auto`)
-      .then(r => r.ok ? r.json() : Promise.reject()).then(d => {
-        const c = d.current, [ico, txt] = WX(c.weather_code);
-        set('#w-ico', ico); set('#w-temp', Math.round(c.temperature_2m) + '°C'); set('#w-desc', txt);
-        set('#w-wind', '💨 ' + Math.round(c.wind_speed_10m) + ' km/h'); set('#w-hum', '💧 ' + Math.round(c.relative_humidity_2m) + '%');
-      }).catch(() => { set('#w-desc', 'Clima indisponível agora'); set('#w-temp', '—'); });
+    const WX_URL = `https://api.open-meteo.com/v1/forecast?latitude=${wl}&longitude=${wn}&current=temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m,weather_code,is_day&timezone=America%2FSao_Paulo`;
+    const WX_EVERY = 5 * 60 * 1000;
+    let wxLast = 0, wxBusy = false, wxHasData = false;
+    const loadWeather = () => {
+      if (wxBusy || document.hidden) return;
+      wxBusy = true;
+      fetch(WX_URL, { cache: 'no-store' })
+        .then(r => r.ok ? r.json() : Promise.reject()).then(d => {
+          const c = d.current;
+          let [ico, txt] = WX(c.weather_code);
+          if (!c.is_day && c.weather_code <= 2) ico = c.weather_code === 0 ? '🌙' : '☁️';
+          set('#w-ico', ico); set('#w-temp', Math.round(c.temperature_2m) + '°C'); set('#w-desc', `${txt} · sensação ${Math.round(c.apparent_temperature)}°C`);
+          set('#w-wind', '💨 ' + Math.round(c.wind_speed_10m) + ' km/h'); set('#w-hum', '💧 ' + Math.round(c.relative_humidity_2m) + '%');
+          const now = new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+          set('#w-updated', `Atualizado às ${now} · atualiza a cada 5 min`);
+          wxLast = Date.now(); wxHasData = true;
+        }).catch(() => {
+          // Mantém o último dado válido; só mostra erro se nunca carregou.
+          if (!wxHasData) { set('#w-desc', 'Clima indisponível agora'); set('#w-temp', '—'); }
+          set('#w-updated', 'Sem conexão · tentando de novo em instantes');
+        }).finally(() => { wxBusy = false; });
+    };
+    loadWeather();
+    setInterval(loadWeather, WX_EVERY);
+    document.addEventListener('visibilitychange', () => { if (!document.hidden && Date.now() - wxLast > 60 * 1000) loadWeather(); });
+    window.addEventListener('online', loadWeather);
 
     // ----[Mapa (Leaflet + OpenStreetMap)]----
     const mapBox = $('#map-box');

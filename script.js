@@ -36,38 +36,4 @@ if (savePlaceButton) {
   });
 }
 
-
-// Máquina de estados: ENTRADA -> PRONTO. Nunca retorna à ENTRADA sem recarregar.
-(() => {
-  const title = document.getElementById('hero-title');
-  if (!title) return;
-  const letters = [...title.querySelectorAll(':scope > span')];
-  if (!letters.length) return;
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-  let phase = 'entrada';
-  const finishEntry = () => {
-    if (phase !== 'entrada') return;
-    phase = 'pronto';
-    title.classList.add('paul-pronto');
-  };
-  if (reduced.matches) finishEntry();
-  else {
-    const last = letters[letters.length - 1];
-    last.addEventListener('animationend', event => {
-      if (event.target === last && event.animationName === 'paul-entrada') finishEntry();
-    });
-  }
-  letters.forEach(letter => {
-    letter.addEventListener('pointerenter', event => {
-      if (phase !== 'pronto' || reduced.matches || event.pointerType === 'touch') return;
-      letter.classList.remove('paul-pulando');
-      void letter.offsetWidth;
-      letter.classList.add('paul-pulando');
-    });
-    letter.addEventListener('animationend', event => {
-      if (event.target === letter && event.animationName === 'paul-pulo') {
-        letter.classList.remove('paul-pulando');
-      }
-    });
-  });
-})();
+// O efeito das letras do título "Pauliceia" fica em site-header.js (usado em todas as páginas).

@@ -148,9 +148,9 @@
                                     <dd id="i-how"></dd>
                                 </div>
                                 <div class="info-row">
-                                    <dt>🌤 Clima agora</dt>
+                                    <dt>🌤 Clima agora <span class="live-dot" aria-hidden="true"></span><span class="live-label">ao vivo</span></dt>
                                     <dd>
-                                        <div class="weather">
+                                        <div class="weather" aria-live="polite">
                                             <div class="weather-main">
                                                 <span class="weather-ico" id="w-ico">⛅</span>
                                                 <div>
@@ -163,6 +163,7 @@
                                                 <span id="w-hum"></span>
                                             </div>
                                         </div>
+                                        <small class="weather-updated" id="w-updated"></small>
                                     </dd>
                                 </div>
                             </dl>
